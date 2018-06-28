@@ -1,0 +1,14 @@
+
+public class Test {
+
+	public static void main(String[] args) {
+		//インスタンス生成、変数taroに代入
+				Person jiro = new Person("次郎",20);
+				System.out.print(jiro.name + "");
+				System.out.println(jiro.age);
+				Person hanako = new Person("花子",18);
+				System.out.println(hanako.name);
+
+	}
+
+}

@@ -1,0 +1,12 @@
+
+public class Test {
+	public static void main(String[] args) {
+		Robot robot1 = new Robot();
+		robot1.name="aibo";
+		robot1.walk();
+
+		System.out.println(robot1.name);
+		System.out.println(robot1 + "が歩く");
+
+}
+}

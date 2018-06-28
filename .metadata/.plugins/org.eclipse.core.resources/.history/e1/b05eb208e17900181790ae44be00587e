@@ -1,0 +1,8 @@
+
+public class Robot {
+	public String name = null;
+	public String walk = null;
+
+
+	}
+
