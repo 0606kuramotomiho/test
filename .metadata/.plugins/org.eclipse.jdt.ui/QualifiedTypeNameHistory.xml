@@ -3,5 +3,11 @@
 <fullyQualifiedTypeName name="java.io.BufferedReader"/>
 <fullyQualifiedTypeName name="java.lang.Class"/>
 <fullyQualifiedTypeName name="com.opensymphony.xwork2.ActionSupport"/>
+<fullyQualifiedTypeName name="com.internousdev.webproj2.util.DBConnector"/>
+<fullyQualifiedTypeName name="com.internousdev.webproj2.dao.InquiryCompleteDAO"/>
+<fullyQualifiedTypeName name="com.internousdev.webproj2.dao.TestDAO"/>
 <fullyQualifiedTypeName name="java.sql.Connection"/>
+<fullyQualifiedTypeName name="java.sql.DriverManager"/>
+<fullyQualifiedTypeName name="java.sql.ResultSet"/>
+<fullyQualifiedTypeName name="com.internousdev.webproj3.dao.HelloStrutsDAO"/>
 </qualifiedTypeNameHistroy>
