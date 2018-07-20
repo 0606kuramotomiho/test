@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.internousdev.webproj5.dto.InquiryDTO;
@@ -11,8 +12,9 @@ import com.internousdev.webproj5.util.DBConnector;
 
 
 public class InquiryCompleteDAO {
+	List<InquiryDTO>inquiryDTOList = new ArrayList<InquiryDTO>();
 
-	List<InquiryDTO> select(){
+	public List<InquiryDTO> select(){
 		DBConnector db = new DBConnector();
 		Connection con = db.getConnection();
 
@@ -38,8 +40,35 @@ public class InquiryCompleteDAO {
 		}
 		return inquiryDTOList;
 	}
-//35ページ
+
 	public int insert(String name,String qtype,String body){
+		int ret= 0;
+		DBConnector db = new DBConnector();
+		Connection con = db.getConnection();
+
+		String sql = "insert into inquiry values(?,?,?)";
+		try{
+			PreparedStatement ps = con.prepareStatement(sql);
+			ps.setString(1, name);
+			ps.setString(2,qtype);
+			ps.setString(3, body);
+			int i = ps.executeUpdate();
+			if(i > 0){
+				System.out.println(i + "件登録されました");
+				ret = i;
+			}
+		}catch (SQLException e){
+			e.printStackTrace();
+
+		}
+		try {
+			con.close();
+		}catch (SQLException e){
+			e.printStackTrace();
+		}
+		return ret;
+
+
 
 	}
 }
