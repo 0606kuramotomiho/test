@@ -16,7 +16,8 @@ insert_date datetime,
 updated_date datetime
 );
 
-drop table if exists item_info_transaction(
+drop table if exists item_info_transaction;
+create table item_info_transaction(
 id int not null primary key auto_increment,
 item_name varchar(30),
 item_price int,
@@ -34,10 +35,10 @@ total_price int,
 total_count int,
 user_master_id varchar(16),
 pay varchar(30),
-insert_date datetome,
+insert_date datetime,
 delete_date datetime
 );
 
 INSERT INTO item_info_transaction(item_name,item_price,item_stock)VALUES("ノートbook",100,50);
 
-INSERT INTO login_user_transation(login_id,login_pass,user_name)VALUES("inter","01","test");
+INSERT INTO login_user_transaction(login_id,login_pass,user_name)VALUES("inter","01","test");

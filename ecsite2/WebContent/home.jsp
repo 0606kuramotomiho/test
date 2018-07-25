@@ -5,8 +5,8 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<meta http-equiv="Contents-Style-Type" content="text/css" />
-	<meta http-equiv="Contents-Script-Type" content="text/javascript" />
+	<meta http-equiv="Content-Style-Type" content="text/css" />
+	<meta http-equiv="Content-Script-Type" content="text/javascript" />
 	<meta http-equiv="imagetoolbar" content="no" />
 	<meta name="description" content="" />
 	<meta name="keywords" content="" />
@@ -63,6 +63,10 @@ text-align: center;
 </style>
 </head>
 <body>
+	<div id="header">
+		<div id="pr">
+		</div>
+	</div>
 	<div id="main">
 		<div id="top">
 			<p>Home</p>
@@ -73,7 +77,7 @@ text-align: center;
 			</s:form>
 			<s:if test="#session.id != null">
 			<p>ログアウトする場合は
-				<a href='<s:url action="Log outAction" />'>こちら</a></p>
+				<a href='<s:url action="LogoutAction" />'>こちら</a></p>
 			</s:if>
 		</div>
 
