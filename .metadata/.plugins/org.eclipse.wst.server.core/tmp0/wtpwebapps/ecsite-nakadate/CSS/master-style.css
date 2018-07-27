@@ -1,0 +1,167 @@
+@CHARSET "UTF-8";
+
+	/* ========TAG LAYOUT======== */
+
+	* {
+			font-family:'Hiragino Kaku Gothic Pro W3','Hiragino Kaku Gothic ProN',Meiryo,sans-serif;
+			text-decoration:none;
+		}
+
+	body {
+		margin:0;
+		padding:0;
+		text-align:center;
+		line-height:1.6;
+		letter-spacing:1px;
+		font-family:Verdana,Helvetica,sans-serif;
+		font-size:12px;
+		color:#333;
+		background:#fff;
+
+	}
+
+	table {
+		text-align:center;
+		margin:0 auto;
+	}
+
+	h3 {
+		margin-bottom:0;
+	}
+
+	/* ========ecsite LAYOUT======== */
+	/* #top {
+		width:780px;
+		margin:30px auto;
+		border:1px solid #333;
+	} */
+
+	#main {
+		width:100%;
+		height:auto;
+		text-align:center;
+		margin-bottom:30px;
+	}
+
+	#text-center {
+		display:inline-block;
+		text-align:center;
+	}
+
+	#itemUpdateContainerWrapper {
+		width:80%;
+		height:auto;
+		margin-left:10%;
+	}
+
+	#itemUpdateContainer {
+		margin-left:10%;
+	}
+
+	#itemInsert {
+		width:21%;
+		height:auto;
+		float:left;
+		border:1px solid #dcdcdc;
+		margin-right:0.5%;
+		margin-left:0.5%;
+		margin-bottom:10px;
+		box-sizing:border-box;
+		padding-bottom:10px;
+	}
+
+	.image-container {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	#itemDetail {
+		clear:left;
+		position: relative;
+		width: 100%;  /* 1列あたりのitem表示個数変えたい場合はここを変える */
+		height: auto;
+		margin-right:0;
+		display:inline-block;
+	}
+
+	#image {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		-webkit-transform: translate(-50%,-50%);
+		-moz-transform: translate(-50%,-50%);
+		-ms-transform: translate(-50%,-50%);
+		-o-transform: translate(-50%,-50%);
+		transform: translate(-50%,-50%);
+
+	    max-width:100%;
+	    max-height:100%;
+	}
+
+
+	 .ratio-1_1:before {
+		content: "";
+		display: block;
+		padding-top: 80%; /* ratio */
+	}
+
+	#red {
+		color:red;
+	}
+
+	#errorMessage {
+		color:red;
+	}
+
+	/*選択ボタン*/
+	#radio{
+		display: flex;
+		flex-direction: row-reverse;
+		justify-content: center;
+		width:80%;
+		margin:0 auto;
+	}
+
+	#radio label:hover {
+		cursor:pointer;
+	}
+
+	#radio input[type='radio']{
+		display: none;
+	}
+
+	#radio label{
+		width:100%;
+		margin:0 auto;
+		background: linear-gradient(to bottom,#f7dfa5,#f0c14b);
+		border:1px solid #a88734;
+		color: #111;
+		border-radius:3px;
+		padding: 5px 10px 5px 10px;
+	}
+
+
+/*---------------clearfix-----------------*/
+		/* for modern brouser */
+		.clearfix:after {
+		  content: ".";
+		  display: block;
+		  clear: both;
+		  height: 0;
+		  visibility: hidden;
+		}
+		/* IE7,MacIE5 */
+		.clearfix {
+		  display: inline-block;
+		}
+		/* WinIE6 below, Exclude MacIE5 \*/
+		* html .clearfix {
+		  height: 1%;
+		}
+		.clearfix {
+		  display: block;
+		}
+		/**/

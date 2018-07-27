@@ -1,0 +1,25 @@
+@CHARSET "UTF-8";
+
+#top {
+	font-size:20px;
+	font-weight:bold;
+	text-align:left;
+	color:#F79047;
+
+	padding-left:10px;
+}
+
+#main {
+			min-height:900px;
+		}
+
+/* #main {
+	width:100%;
+	height:auto;
+	text-align:center;
+
+	padding-left:10px;
+
+	box-sizing:border-box;
+
+} */
