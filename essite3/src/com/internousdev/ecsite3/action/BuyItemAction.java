@@ -1,4 +1,4 @@
-package com.internousdev.ecsite.action;
+package com.internousdev.ecsite3.action;
 
 import java.util.Map;
 
@@ -9,7 +9,7 @@ import com.opensymphony.xwork2.ActionSupport;
 public class BuyItemAction extends ActionSupport implements SessionAware{
 	public Map<String,Object>session;
 	private int count;
-	
+	private String pay;
 
 	public String execute(){
 		String result = SUCCESS;
@@ -30,7 +30,10 @@ public class BuyItemAction extends ActionSupport implements SessionAware{
 	public void setCount(int count){
 		this.count = count;
 	}
-	
+	public void setPay(String pay){
+		this.pay = pay;
+	}
+
 
 	@Override
 	public void setSession(Map<String,Object>session){

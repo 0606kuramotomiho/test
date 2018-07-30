@@ -1,0 +1,5 @@
+package com.internousdev.ecsite3.action;
+
+public class AdminConfirmAction {
+
+}

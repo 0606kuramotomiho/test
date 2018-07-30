@@ -10,6 +10,20 @@
 	<meta http-equiv="imagetoolbar" content="no" />
 	<meta name="description" content="" />
 	<meta name="keywords" content="" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+
+  <script>
+    $(document).ready(function(){
+      $('.abc').bxSlider({
+          auto: true,
+          mode: 'fade',
+          speed: 1000,
+          slideWidth: 400
+      });
+    });
+  </script>
 	<title>Home画面</title>
 
 <style type="text/css">
@@ -47,6 +61,15 @@ width: 100%;
 height: 500px;
 text-align: center;
 }
+#test{
+
+	text-align: center;}
+.abc{
+width: 100%;
+margin: 0 auto;
+opacity: 0.6;
+text-align: center;
+}
 
 #footer{
 width: 100%;
@@ -70,6 +93,13 @@ text-align: center;
 	<div id="main">
 		<div id="top">
 			<p>Home</p>
+		</div>
+		<div id="test">
+		 <div class="abc">
+            <div><img src="./img/pic1.jpg"></div>
+            <div><img src="./img/pic2.jpg"></div>
+            <div><img src="./img/pic3.jpg"></div>
+        </div>
 		</div>
 		<div id="text-center">
 			<s:form action="HomeAction">
