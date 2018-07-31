@@ -68,3 +68,10 @@
 0:0:0:0:0:0:0:1 - - [31/Jul/2018:11:42:30 +0900] "POST /ecsite3/HomeAction.action HTTP/1.1" 200 2201
 0:0:0:0:0:0:0:1 - - [31/Jul/2018:11:42:36 +0900] "POST /ecsite3/AdminAction.action HTTP/1.1" 200 2160
 0:0:0:0:0:0:0:1 - - [31/Jul/2018:11:42:47 +0900] "POST /ecsite3/AdminConfirmAction HTTP/1.1" 200 3451
+127.0.0.1 - - [31/Jul/2018:16:51:39 +0900] "GET / HTTP/1.1" 404 1019
+0:0:0:0:0:0:0:1 - - [31/Jul/2018:16:51:41 +0900] "GET /ecsite3/ HTTP/1.1" 200 2679
+0:0:0:0:0:0:0:1 - - [31/Jul/2018:16:51:41 +0900] "GET /ecsite3/img/pic1.jpg HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [31/Jul/2018:16:51:41 +0900] "GET /ecsite3/img/pic2.jpg HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [31/Jul/2018:16:51:41 +0900] "GET /ecsite3/img/pic3.jpg HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [31/Jul/2018:16:51:44 +0900] "POST /ecsite3/AdminAction.action HTTP/1.1" 200 2160
+0:0:0:0:0:0:0:1 - - [31/Jul/2018:16:52:05 +0900] "POST /ecsite3/AdminConfirmAction HTTP/1.1" 200 3451

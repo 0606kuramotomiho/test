@@ -19,10 +19,7 @@
 			<result name="success">buyItem.jsp</result>
 		</action>
 
-		<!-- 		AdminAction -->
-		<action name="AdminAction" class="com.internousdev.ecsite3.action.AdminAction" method="execute">
-		<result name="success">admin.jsp</result>
-		</action>
+
 		<!-- 		Login Action -->
 		<action name="LoginAction" class="com.internousdev.ecsite3.action.LoginAction" method="execute">
 			<result name="success">buyItem.jsp</result>
@@ -66,6 +63,16 @@
 		<!-- 		LoginAction -->
 		<action name="LogoutAction" class="com.internousdev.ecsite3.action.LogoutAction" method="execute">
 			<result name="success">home.jsp</result>
+		</action>
+
+		<!-- 		AdminAction -->
+		<action name="AdminAction" class="com.internousdev.ecsite3.action.AdminAction" method="execute">
+		<result name="success">admin.jsp</result>
+		</action>
+
+		<!-- 		AdminConfirmAction -->
+		<action name="AdminConfirmAction" class="com.internousdev.ecsite3.action.AdminConfirmAction" method="execute">
+		<result name="success">complete.jsp</result>
 		</action>
 	</package>
 </struts>
