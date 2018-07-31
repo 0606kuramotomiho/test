@@ -61,9 +61,9 @@ width: 100%;
 height: 500px;
 text-align: center;
 }
-#test{
-
-	text-align: center;}
+#container{
+	width: 100%;
+	padding-left: 550px;
 .abc{
 width: 100%;
 margin: 0 auto;
@@ -94,7 +94,7 @@ text-align: center;
 		<div id="top">
 			<p>Home</p>
 		</div>
-		<div id="test">
+		<div id="container">
 		 <div class="abc">
             <div><img src="./img/pic1.jpg"></div>
             <div><img src="./img/pic2.jpg"></div>

@@ -39,6 +39,19 @@ insert_date datetime,
 delete_date datetime
 );
 
+drop table if exists admin_info;
+create table admin_info(
+id int not null primary key auto_increment,
+add_item varchar(16),
+add_item_price varchar(16),
+add_item_count varchar(16),
+
+insert_date datetime,
+delete_date datetime
+);
+
+
+
 INSERT INTO item_info_transaction(item_name,item_price,item_stock)VALUES("ノートbook",100,50);
 
 INSERT INTO login_user_transaction(login_id,login_pass,user_name)VALUES("inter","01","test");

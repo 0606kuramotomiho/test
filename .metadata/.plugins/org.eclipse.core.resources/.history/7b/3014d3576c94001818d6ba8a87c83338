@@ -1,0 +1,61 @@
+package com.internousdev.ecsite3.action;
+
+import java.util.Map;
+
+import org.apache.struts2.interceptor.SessionAware;
+
+import com.opensymphony.xwork2.ActionSupport;
+
+public class AdminConfirmAction extends ActionSupport implements SessionAware{
+
+	private String addItem;
+	private String itemPrice;
+	private String itemCount;
+	public Map<String,Object> session;
+	private String errorMassage;
+
+	public String execute(){
+		String result = SUCCESS;
+
+		//未入力の有無を確認。確認画面で表示したい値をセッションに格納
+		if(!(addItem.equals("")) && !(itemPrice.equals("")) && !(itemCount.equals(""))){
+			session.put("addItem", addItem);
+			session.put("itemPrice", itemPrice);
+			session.put("itemCount", itemCount);
+		}else{
+			setErrorMassage("未入力の項目があります。");
+			result = ERROR;
+		}
+		return result;
+	}
+
+	public String getAddItem(){
+		return addItem;
+	}
+	public void setItem(String addItem){
+		this.addItem = addItem;
+	}
+	public String getItemPrice(){
+		return itemPrice;
+	}
+	public void itemPrice(String itemPrice){
+		this.itemPrice = itemPrice;
+	}
+	public String getItemCount(){
+		return itemCount;
+	}
+	public void setItemCount(String ItemCount){
+		this.itemCount = itemCount;
+	}
+	@Override
+	public void setSession(Map<String,Object>session){
+		this.session = session;
+	}
+	public String getErrorMassage(){
+		return errorMassage;
+	}
+	public void setErrorMassage(String errorMassage){
+		this.errorMassage = errorMassage;
+	}
+
+}
