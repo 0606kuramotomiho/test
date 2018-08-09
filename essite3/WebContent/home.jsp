@@ -65,7 +65,7 @@ text-align: center;
 	width: 100%;
 	padding-left: 550px;
 .abc{
-width: 100%;
+width: 80%;
 margin: 0 auto;
 opacity: 0.6;
 text-align: center;
