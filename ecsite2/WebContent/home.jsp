@@ -10,78 +10,60 @@
 	<meta http-equiv="imagetoolbar" content="no" />
 	<meta name="description" content="" />
 	<meta name="keywords" content="" />
+	<link rel="stylesheet" href="./css/style.css">
 	<title>Home画面</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-<style type="text/css">
 
-body{
-margin: 0;
-padding: 0;
-line-height: 1.6;
-letter-spacing: 1px;
-font-family: Verdana, Helvetica, sans-serif;
-font-size: 12px;
-color: #333;
-background: #fff;
-}
-
-table{
-text-align: center;
-margin: 0 auto;
-}
-
-#top{
-width: 780px;
-margin: 30px auto;
-border: 1px solid #333;
-}
-
-#header{
-width: 100%;
-height: 80px;
-background-color: black;
-}
-
-#main{
-width: 100%;
-height: 500px;
-text-align: center;
-}
-
-#footer{
-width: 100%;
-height: 80px;
-background-color: black;
-clear: both;
-}
-
-#text-center{
-display: inline-block;
-text-align: center;
-}
-
-</style>
 </head>
 <body>
-	<div id="header">
-		<div id="pr">
-		</div>
-	</div>
-	<div id="main">
-		<div id="top">
-			<p>Home</p>
-		</div>
-		<div id="text-center">
-			<s:form action="HomeAction">
-				<s:submit value="商品購入"/>
-			</s:form>
-			<s:if test="#session.id != null">
-			<p>ログアウトする場合は
-				<a href='<s:url action="LogoutAction" />'>こちら</a></p>
-			</s:if>
-		</div>
+<div id="abc">
 
-	</div>
+
+
+	<jsp:include page="header.jsp" />
+	<img src="./img/IEZbJGSGMxLI4Kj1534472615_1534472778.jpg">
+</div>
+	<div id="shop">
+<h1>新着</h1>
+<s:if test="shopInfoDtoList==null">
+<div class="info">
+検索結果がありません。
+</div>
+</s:if>
+<s:else>
+<div id="shop-list">
+<s:iterator value="#session.shopInfoDtoList">
+<div class="product-list-box">
+<ul>
+	<li>
+	<a href='<s:url action="#">
+	<s:param name="shopId" value="%{shopId}"/>
+	</s:url>'><img src='<s:property value="imageFilePath"/>/<s:property value="imageFileName"/>' class="item-image-box-200"/></a><br>
+	<s:property value="shopName"/><br>
+	<s:property value="prace"/><br>
+
+  </li>
+</ul>
+</div>
+</s:iterator>
+</div>
+<div class="pager">
+<s:iterator begin="1" end="#session.totalPageSize" status="pageNo">
+	<s:if test="#session.currentPageNo == #pageNo.count">
+		<s:property value="%{#pageNo.count}"/>
+	</s:if>
+	<s:else>
+		<a href="<s:url action='#'><s:param name='pageNo' value='%{#pageNo.count}'/><s:param name='categoryId' value='%{categoryId}'/></s:url> ">	<s:property value="%{#pageNo.count}"/></a>
+	</s:else>
+</s:iterator>
+</div>
+</s:else>
+</div>
+
+
+
+
 	<div id="footer">
 		<div id="pr">
 		</div>

@@ -3,17 +3,19 @@ package com.internousdev.ecsite2.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 import com.internousdev.ecsite2.dto.LoginDTO;
 import com.internousdev.ecsite2.util.DBConnector;
 
 
 public class LoginDAO {
-	private DBConnector dbConnector = new DBConnector();
-	private Connection connection = dbConnector.getConnection();
+
 	private LoginDTO loginDTO = new LoginDTO();
 
-	public LoginDTO getLoginUserInfo(String loginUserId,String loginPassword){
+	public LoginDTO getLoginUserInfo(String loginUserId,String loginPassword) throws SQLException{
+		DBConnector dbConnector = new DBConnector();
+		Connection connection = dbConnector.getConnection();
 		String sql = "SELECT * FROM login_user_transaction where login_id = ? AND login_pass = ?";
 
 		try{
@@ -35,6 +37,8 @@ public class LoginDAO {
 			}
 		}catch(Exception e){
 			e.printStackTrace();
+		} finally {
+			connection.close();
 		}
 		return loginDTO;
 	}

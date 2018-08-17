@@ -1,0 +1,36 @@
+@CHARSET "UTF-8";
+#header {
+	background-color: white;
+
+	height: 80px;
+	border: 5px solid #993333;
+	background: rgba(255,255,255,0.5);
+
+}
+
+#header-menu {
+	float: right;
+}
+#header-menu li{
+
+	display: inline-block;
+	list-style: none;
+	font-size: 18px;
+  	padding-left: 50px;
+  	padding-right: 50px;
+  	line-height: 35px;
+  	border: 2px solid #993333;
+  	margin-right: 30px;
+}
+
+#header-logo{
+
+  color: #993333;
+  text-shadow: 0px 3px 0px #b2a98f,
+               0px 14px 10px rgba(0,0,0,0.15),
+               0px 24px 2px rgba(0,0,0,0.1),
+               0px 34px 30px rgba(0,0,0,0.1);
+  font-size: 50px;
+  line-height: 55px;
+
+}

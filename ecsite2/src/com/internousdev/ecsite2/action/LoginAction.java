@@ -1,5 +1,6 @@
 package com.internousdev.ecsite2.action;
 
+import java.sql.SQLException;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
@@ -19,7 +20,7 @@ public class LoginAction extends ActionSupport implements SessionAware{
 	private LoginDTO loginDTO = new LoginDTO();
 	private BuyItemDAO buyItemDAO = new BuyItemDAO();
 
-	public String execute(){
+	public String execute() throws SQLException{
 		String result = ERROR;
 		loginDTO = loginDAO.getLoginUserInfo(loginUserId,loginPassword);
 		session.put("loginUser", loginDTO);
