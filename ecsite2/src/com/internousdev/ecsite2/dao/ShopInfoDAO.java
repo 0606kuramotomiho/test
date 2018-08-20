@@ -15,29 +15,29 @@ public class ShopInfoDAO {
 	public List<ShopInfoDTO> getShopInfoList() {
 		DBConnector dbConnector = new DBConnector();
 		Connection connection = dbConnector.getConnection();
-		List<ShopInfoDTO> ShopInfoDtoList = new ArrayList<ShopInfoDTO>();
+		List<ShopInfoDTO> shopInfoDtoList = new ArrayList<ShopInfoDTO>();
 		String sql = "select * from shop_info";
 
 		try {
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
 			ResultSet resultSet = preparedStatement.executeQuery();
 			while (resultSet.next()) {
-				ShopInfoDTO ShopInfoDto = new ShopInfoDTO();
-				ShopInfoDto.setId(resultSet.getInt("id"));
-				ShopInfoDto.setshopId(resultSet.getInt("shop_id"));
-				ShopInfoDto.setshopName(resultSet.getString("shop_name"));
-				ShopInfoDto.setshopName(resultSet.getString("prace"));
-				ShopInfoDto.setshopDescription(resultSet.getString("shop_description"));
-				ShopInfoDto.setCategoryId(resultSet.getInt("category_id"));
+				ShopInfoDTO shopInfoDto = new ShopInfoDTO();
+				shopInfoDto.setId(resultSet.getInt("id"));
+				shopInfoDto.setShopId(resultSet.getInt("shop_id"));
+				shopInfoDto.setShopName(resultSet.getString("shop_name"));
+				shopInfoDto.setShopName(resultSet.getString("place"));
+				shopInfoDto.setShopDescription(resultSet.getString("shop_description"));
+				shopInfoDto.setCategoryId(resultSet.getInt("category_id"));
 
-				ShopInfoDto.setImageFilePath(resultSet.getString("image_file_path"));
-				ShopInfoDto.setImageFileName(resultSet.getString("image_file_name"));
-				ShopInfoDto.setReleaseDate(resultSet.getDate("release_date"));
-				ShopInfoDto.setReleaseCompany(resultSet.getString("release_company"));
-				ShopInfoDto.setStatus(resultSet.getInt("status"));
-				ShopInfoDto.setUpdateDate(resultSet.getDate("regist_date"));
-				ShopInfoDto.setUpdateDate(resultSet.getDate("update_date"));
-				ShopInfoDtoList.add(ShopInfoDto);
+				shopInfoDto.setImageFilePath(resultSet.getString("image_file_path"));
+				shopInfoDto.setImageFileName(resultSet.getString("image_file_name"));
+				shopInfoDto.setReleaseDate(resultSet.getDate("release_date"));
+				shopInfoDto.setReleaseCompany(resultSet.getString("release_company"));
+				shopInfoDto.setStatus(resultSet.getInt("status"));
+				shopInfoDto.setUpdateDate(resultSet.getDate("regist_date"));
+				shopInfoDto.setUpdateDate(resultSet.getDate("update_date"));
+				shopInfoDtoList.add(shopInfoDto);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -47,33 +47,33 @@ public class ShopInfoDAO {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return ShopInfoDtoList;
+		return shopInfoDtoList;
 	}
 
 	public ShopInfoDTO getShopInfo(int shopId) {
 		DBConnector dbConnector = new DBConnector();
 		Connection connection = dbConnector.getConnection();
-		ShopInfoDTO ShopInfoDTO = new ShopInfoDTO();
-		String sql = "select * from Shop_info where Shop_id=?";
+		ShopInfoDTO shopInfoDTO = new ShopInfoDTO();
+		String sql = "select * from shop_info where shop_id=?";
 		try {
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
 			preparedStatement.setInt(1, shopId);
 			ResultSet resultSet = preparedStatement.executeQuery();
 			while (resultSet.next()) {
-				ShopInfoDTO.setId(resultSet.getInt("id"));
-				ShopInfoDTO.setshopId(resultSet.getInt("shop_id"));
-				ShopInfoDTO.setshopName(resultSet.getString("shop_name"));
-				ShopInfoDTO.setshopName(resultSet.getString("prace"));
-				ShopInfoDTO.setshopDescription(resultSet.getString("shop_description"));
-				ShopInfoDTO.setCategoryId(resultSet.getInt("category_id"));
+				shopInfoDTO.setId(resultSet.getInt("id"));
+				shopInfoDTO.setShopId(resultSet.getInt("shop_id"));
+				shopInfoDTO.setShopName(resultSet.getString("shop_name"));
+				shopInfoDTO.setShopName(resultSet.getString("place"));
+				shopInfoDTO.setShopDescription(resultSet.getString("shop_description"));
+				shopInfoDTO.setCategoryId(resultSet.getInt("category_id"));
 
-				ShopInfoDTO.setImageFilePath(resultSet.getString("image_file_path"));
-				ShopInfoDTO.setImageFileName(resultSet.getString("image_file_name"));
-				ShopInfoDTO.setReleaseDate(resultSet.getDate("release_date"));
-				ShopInfoDTO.setReleaseCompany(resultSet.getString("release_company"));
-				ShopInfoDTO.setStatus(resultSet.getInt("status"));
-				ShopInfoDTO.setUpdateDate(resultSet.getDate("regist_date"));
-				ShopInfoDTO.setUpdateDate(resultSet.getDate("update_date"));
+				shopInfoDTO.setImageFilePath(resultSet.getString("image_file_path"));
+				shopInfoDTO.setImageFileName(resultSet.getString("image_file_name"));
+				shopInfoDTO.setReleaseDate(resultSet.getDate("release_date"));
+				shopInfoDTO.setReleaseCompany(resultSet.getString("release_company"));
+				shopInfoDTO.setStatus(resultSet.getInt("status"));
+				shopInfoDTO.setUpdateDate(resultSet.getDate("regist_date"));
+				shopInfoDTO.setUpdateDate(resultSet.getDate("update_date"));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -83,14 +83,14 @@ public class ShopInfoDAO {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return ShopInfoDTO;
+		return shopInfoDTO;
 	}
 
 	public List<ShopInfoDTO> getShopInfoListByCategoryId(int categoryId, int shopId, int limitOffset,
 			int limitRowCount) {
 		DBConnector dbConnector = new DBConnector();
 		Connection connection = dbConnector.getConnection();
-		List<ShopInfoDTO> ShopInfoDtoList = new ArrayList<ShopInfoDTO>();
+		List<ShopInfoDTO> shopInfoDtoList = new ArrayList<ShopInfoDTO>();
 		String sql = "select * from shop_info where category_id=? and shop"
 				+ ""
 				+ "_id not in(?) order by rand() limit ?,?";
@@ -102,22 +102,22 @@ public class ShopInfoDAO {
 			preparedStatement.setInt(4, limitRowCount);
 			ResultSet resultSet = preparedStatement.executeQuery();
 			while (resultSet.next()) {
-				ShopInfoDTO ShopInfoDTO = new ShopInfoDTO();
-				ShopInfoDTO.setId(resultSet.getInt("id"));
-				ShopInfoDTO.setshopId(resultSet.getInt("shop_id"));
-				ShopInfoDTO.setshopName(resultSet.getString("shop_name"));
-				ShopInfoDTO.setPrace(resultSet.getString("prace"));
-				ShopInfoDTO.setshopDescription(resultSet.getString("shop_description"));
-				ShopInfoDTO.setCategoryId(resultSet.getInt("category_id"));
+				ShopInfoDTO shopInfoDTO = new ShopInfoDTO();
+				shopInfoDTO.setId(resultSet.getInt("id"));
+				shopInfoDTO.setShopId(resultSet.getInt("shop_id"));
+				shopInfoDTO.setShopName(resultSet.getString("shop_name"));
+				shopInfoDTO.setPlace(resultSet.getString("place"));
+				shopInfoDTO.setShopDescription(resultSet.getString("shop_description"));
+				shopInfoDTO.setCategoryId(resultSet.getInt("category_id"));
 
-				ShopInfoDTO.setImageFilePath(resultSet.getString("image_file_path"));
-				ShopInfoDTO.setImageFileName(resultSet.getString("image_file_name"));
-				ShopInfoDTO.setReleaseDate(resultSet.getDate("release_date"));
-				ShopInfoDTO.setReleaseCompany(resultSet.getString("release_company"));
-				ShopInfoDTO.setStatus(resultSet.getInt("status"));
-				ShopInfoDTO.setUpdateDate(resultSet.getDate("regist_date"));
-				ShopInfoDTO.setUpdateDate(resultSet.getDate("update_date"));
-				ShopInfoDtoList.add(ShopInfoDTO);
+				shopInfoDTO.setImageFilePath(resultSet.getString("image_file_path"));
+				shopInfoDTO.setImageFileName(resultSet.getString("image_file_name"));
+				shopInfoDTO.setReleaseDate(resultSet.getDate("release_date"));
+				shopInfoDTO.setReleaseCompany(resultSet.getString("release_company"));
+				shopInfoDTO.setStatus(resultSet.getInt("status"));
+				shopInfoDTO.setUpdateDate(resultSet.getDate("regist_date"));
+				shopInfoDTO.setUpdateDate(resultSet.getDate("update_date"));
+				shopInfoDtoList.add(shopInfoDTO);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -127,43 +127,43 @@ public class ShopInfoDAO {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return ShopInfoDtoList;
+		return shopInfoDtoList;
 	}
 
 	public List<ShopInfoDTO> getShopInfoListAll(String[] keywordsList) {
 		DBConnector dbConnector = new DBConnector();
 		Connection connection = dbConnector.getConnection();
-		List<ShopInfoDTO> ShopInfoDtoList = new ArrayList<ShopInfoDTO>();
+		List<ShopInfoDTO> shopInfoDtoList = new ArrayList<ShopInfoDTO>();
 		String sql = "select * from shop_info where";
 		boolean initializeFlag = true;
 		for (String keyword : keywordsList) {
 			if (initializeFlag) {
-				sql += " (shop_name like '%" + keyword + "%' or shop_name_kana like '%" + keyword + "%')";
+				sql += " (shop_name like '%" + keyword + "%' or place like '%" + keyword + "%')";
 				initializeFlag = false;
 			} else {
-				sql += " and (shopt_name like '%" + keyword + "%' or shop_name_kana like '%" + keyword + "%')";
+				sql += " and (shopt_name like '%" + keyword + "%' place like '%" + keyword + "%')";
 			}
 		}
 		try {
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
 			ResultSet resultSet = preparedStatement.executeQuery();
 			while (resultSet.next()) {
-				ShopInfoDTO ShopInfoDTO = new ShopInfoDTO();
-				ShopInfoDTO.setId(resultSet.getInt("id"));
-				ShopInfoDTO.setshopId(resultSet.getInt("Shop_id"));
-				ShopInfoDTO.setshopName(resultSet.getString("Shop_name"));
-				ShopInfoDTO.setPrace(resultSet.getString("prace"));
-				ShopInfoDTO.setshopDescription(resultSet.getString("Shop_description"));
-				ShopInfoDTO.setCategoryId(resultSet.getInt("category_id"));
+				ShopInfoDTO shopInfoDTO = new ShopInfoDTO();
+				shopInfoDTO.setId(resultSet.getInt("id"));
+				shopInfoDTO.setShopId(resultSet.getInt("shop_id"));
+				shopInfoDTO.setShopName(resultSet.getString("shop_name"));
+				shopInfoDTO.setPlace(resultSet.getString("place"));
+				shopInfoDTO.setShopDescription(resultSet.getString("shop_description"));
+				shopInfoDTO.setCategoryId(resultSet.getInt("category_id"));
 
-				ShopInfoDTO.setImageFilePath(resultSet.getString("image_file_path"));
-				ShopInfoDTO.setImageFileName(resultSet.getString("image_file_name"));
-				ShopInfoDTO.setReleaseDate(resultSet.getDate("release_date"));
-				ShopInfoDTO.setReleaseCompany(resultSet.getString("release_company"));
-				ShopInfoDTO.setStatus(resultSet.getInt("status"));
-				ShopInfoDTO.setUpdateDate(resultSet.getDate("regist_date"));
-				ShopInfoDTO.setUpdateDate(resultSet.getDate("update_date"));
-				ShopInfoDtoList.add(ShopInfoDTO);
+				shopInfoDTO.setImageFilePath(resultSet.getString("image_file_path"));
+				shopInfoDTO.setImageFileName(resultSet.getString("image_file_name"));
+				shopInfoDTO.setReleaseDate(resultSet.getDate("release_date"));
+				shopInfoDTO.setReleaseCompany(resultSet.getString("release_company"));
+				shopInfoDTO.setStatus(resultSet.getInt("status"));
+				shopInfoDTO.setUpdateDate(resultSet.getDate("regist_date"));
+				shopInfoDTO.setUpdateDate(resultSet.getDate("update_date"));
+				shopInfoDtoList.add(shopInfoDTO);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -173,43 +173,43 @@ public class ShopInfoDAO {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return ShopInfoDtoList;
+		return shopInfoDtoList;
 	}
 
 	public List<ShopInfoDTO> getShopInfoListByKeywords(String[] keywordsList, String categoryId) {
 		DBConnector dbConnector = new DBConnector();
 		Connection connection = dbConnector.getConnection();
-		List<ShopInfoDTO> ShopInfoDtoList = new ArrayList<ShopInfoDTO>();
-		String sql = "select * from Shop_info where";
+		List<ShopInfoDTO> shopInfoDtoList = new ArrayList<ShopInfoDTO>();
+		String sql = "select * from shop_info where";
 		boolean initializeFlag = true;
 		for (String keyword : keywordsList) {
 			if (initializeFlag) {
-				sql += " category_id=" + categoryId + " and (Shop_name like '%" + keyword + "%' or Prace like '%" + keyword + "%')";
+				sql += " category_id=" + categoryId + " and (shop_name like '%" + keyword + "%' or place like '%" + keyword + "%')";
 				initializeFlag = false;
 			} else {
-				sql += " and (Shop_name like '%" + keyword + "%' or Prace like '%" + keyword + "%')";
+				sql += " and (shop_name like '%" + keyword + "%' or place like '%" + keyword + "%')";
 			}
 		}
 		try {
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
 			ResultSet resultSet = preparedStatement.executeQuery();
 			while (resultSet.next()) {
-				ShopInfoDTO ShopInfoDTO = new ShopInfoDTO();
-				ShopInfoDTO.setId(resultSet.getInt("id"));
-				ShopInfoDTO.setshopId(resultSet.getInt("Shop_id"));
-				ShopInfoDTO.setshopName(resultSet.getString("Shop_name"));
-				ShopInfoDTO.setPrace(resultSet.getString("Prace"));
-				ShopInfoDTO.setshopDescription(resultSet.getString("Shop_description"));
-				ShopInfoDTO.setCategoryId(resultSet.getInt("category_id"));
-				ShopInfoDTO.setPrice(resultSet.getInt("price"));
-				ShopInfoDTO.setImageFilePath(resultSet.getString("image_file_path"));
-				ShopInfoDTO.setImageFileName(resultSet.getString("image_file_name"));
-				ShopInfoDTO.setReleaseDate(resultSet.getDate("release_date"));
-				ShopInfoDTO.setReleaseCompany(resultSet.getString("release_company"));
-				ShopInfoDTO.setStatus(resultSet.getInt("status"));
-				ShopInfoDTO.setUpdateDate(resultSet.getDate("regist_date"));
-				ShopInfoDTO.setUpdateDate(resultSet.getDate("update_date"));
-				ShopInfoDtoList.add(ShopInfoDTO);
+				ShopInfoDTO shopInfoDTO = new ShopInfoDTO();
+				shopInfoDTO.setId(resultSet.getInt("id"));
+				shopInfoDTO.setShopId(resultSet.getInt("shop_id"));
+				shopInfoDTO.setShopName(resultSet.getString("shop_name"));
+				shopInfoDTO.setPlace(resultSet.getString("place"));
+				shopInfoDTO.setShopDescription(resultSet.getString("shop_description"));
+				shopInfoDTO.setCategoryId(resultSet.getInt("category_id"));
+
+				shopInfoDTO.setImageFilePath(resultSet.getString("image_file_path"));
+				shopInfoDTO.setImageFileName(resultSet.getString("image_file_name"));
+				shopInfoDTO.setReleaseDate(resultSet.getDate("release_date"));
+				shopInfoDTO.setReleaseCompany(resultSet.getString("release_company"));
+				shopInfoDTO.setStatus(resultSet.getInt("status"));
+				shopInfoDTO.setUpdateDate(resultSet.getDate("regist_date"));
+				shopInfoDTO.setUpdateDate(resultSet.getDate("update_date"));
+				shopInfoDtoList.add(shopInfoDTO);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -219,6 +219,6 @@ public class ShopInfoDAO {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return ShopInfoDtoList;
+		return shopInfoDtoList;
 	}
 }

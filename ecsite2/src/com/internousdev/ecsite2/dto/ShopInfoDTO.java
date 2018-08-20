@@ -6,10 +6,10 @@ public class ShopInfoDTO {
 	private int id;
 	private int shopId;
 	private String shopName;
-	private String prace;
+	private String place;
 	private String shopDescription;
 	private int categoryId;
-	private int price;
+
 	private String imageFilePath;
 	private String imageFileName;
 	private Date releaseDate;
@@ -23,28 +23,28 @@ public class ShopInfoDTO {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public int getshopId() {
+	public int getShopId() {
 		return shopId;
 	}
-	public void setshopId(int shopId) {
+	public void setShopId(int shopId) {
 		this.shopId = shopId;
 	}
-	public String getshopName() {
+	public String getShopName() {
 		return shopName;
 	}
-	public void setshopName(String shopName) {
+	public void setShopName(String shopName) {
 		this.shopName = shopName;
 	}
-	public String getPrace() {
-		return prace;
+	public String getPlace() {
+		return place;
 	}
-	public void setPrace(String prace) {
-		this.prace = prace;
+	public void setPlace(String place) {
+		this.place = place;
 	}
-	public String getshopDescription() {
+	public String getShopDescription() {
 		return shopDescription;
 	}
-	public void setshopDescription(String shopDescription) {
+	public void setShopDescription(String shopDescription) {
 		this.shopDescription = shopDescription;
 	}
 	public int getCategoryId() {
@@ -53,12 +53,7 @@ public class ShopInfoDTO {
 	public void setCategoryId(int categoryId) {
 		this.categoryId = categoryId;
 	}
-	public int getPrice() {
-		return price;
-	}
-	public void setPrice(int price) {
-		this.price = price;
-	}
+
 	public String getImageFilePath() {
 		return imageFilePath;
 	}
