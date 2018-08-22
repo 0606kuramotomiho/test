@@ -24,7 +24,7 @@
 	<jsp:include page="header.jsp" />
 
 <div id="shop">
-<jsp:include page="shopList.jsp" />
+
 </div>
 
 

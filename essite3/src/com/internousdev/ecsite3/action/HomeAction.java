@@ -6,9 +6,6 @@ import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
-import com.internousdev.Multitas.dao.MCategoryDAO;
-import com.internousdev.Multitas.dto.MCategoryDTO;
-import com.internousdev.Multitas.util.CommonUtility;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class HomeAction extends ActionSupport implements SessionAware{

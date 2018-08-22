@@ -7,7 +7,8 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="./css/style.css">
-<meta http-equiv="refresh" content="0;URL='ShopListAction'"/>
+<!-- 0秒でアクションに飛ぶ -->
+<meta http-equiv="refresh" content="0;URL='HomeAction'"/>
 <title>MULTITASKING</title>
 </head>
 <body>

@@ -19,8 +19,6 @@ public class ShopListAction extends ActionSupport implements SessionAware{
 	private String Place;
 	private String imageFilePath;
 	private String imageFileName;
-
-
 	private String categoryId;
 	private String keywords;
 	private List<MCategoryDTO> mCategoryDtoList = new ArrayList<MCategoryDTO>();
